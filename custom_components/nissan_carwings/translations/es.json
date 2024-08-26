@@ -1,0 +1,80 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "description": "Credenciales de Nissan Connect.",
+                "data": {
+                    "username": "e-mail",
+                    "password": "contraseña",
+                    "region": "Región",
+                    "pycarwings3_base_url": "https://domain.tld/custom/api/endpoint/"
+                },
+                "data_description": {
+                    "pycarwings3_base_url": "Dejar vacío para usar el endpoint de Nissan Connect API por defecto."
+                }
+            }
+        },
+        "error": {
+            "auth": "Ha fallado la autenticación. Comprueba las credenciales.",
+            "connection": "No se ha podido contactar con el servidor.",
+            "unknown": "Error desconocido."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "description": "Configuración de la integración",
+                "data": {
+                    "update_interval": "Intervalo de sincronización (en segundos)",
+                    "poll_interval": "Intervalo de consulta a Nissan Connect (en segundos)",
+                    "poll_interval_charging": "Intervalo de consulta a Nissan Connect mientras está cargando (en segundos)"
+                },
+                "data_description": {
+                    "update_interval": "Frecuencia de sincronización de la integración a la API de Nissan.",
+                    "poll_interval": "Frecuencia de consulta para obtener nuevos datos de Nissan Connect API.",
+                    "poll_interval_charging": "Frecuencia de consulta para obtener nuevos datos de Nissan Connect API mientras está cargando."
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "battery_soc": {
+                "name": "Batería"
+            },
+            "range_ac_off": {
+                "name": "Autonomía estimada"
+            },
+            "range_ac_on": {
+                "name": "Autonomía estimada (AA)"
+            },
+            "battery_capacity": {
+                "name": "Capacidad de la batería"
+            },
+            "electric_mileage": {
+                "name": "Eficiencia diaria"
+            },
+            "hvac_timer": {
+                "name": "Temporizador AA"
+            }
+        },
+        "switch": {
+            "ac_control": {
+                "name": "Control de climatizador"
+            }
+        },
+        "binary_sensor": {
+            "plug_status": {
+                "name": "Estado del enchufe"
+            },
+            "charging_status": {
+                "name": "Cargando"
+            }
+        },
+        "button": {
+            "request_update": {
+                "name": "Solicitar actualización de datos"
+            }
+        }
+    }
+}
